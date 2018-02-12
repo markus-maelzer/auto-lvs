@@ -1,0 +1,16 @@
+[
+  {
+    "username": "markus.maelzer",
+    "password": "1234",
+    "lvs-username": "markus.malzer",
+    "lvs-password": "lvs",
+    "absent": false
+  },
+  {
+    "username": "test.test",
+    "password": "1234",
+    "lvs-username": "markus.malzer",
+    "lvs-password": "lvs",
+    "absent": false
+  }
+]
