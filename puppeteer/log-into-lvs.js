@@ -11,13 +11,18 @@ async function logIntoLVS(user, pw) {
   await page.keyboard.type(pw, {delay: 50});
   await page.waitFor(1000);
   await page.click('#Login1_Button1');
+  await page.waitFor(5000);
+  await page.click('#_ctl6_Meinstatus2_Button1');
 
-  // await page.click('whatever the anwesend button is named')
   await page.waitFor(2000);
   await browser.close();
+  return await { message: `Successfully logged in ${user}` };
   }
   catch(err) {
+    // check status: if anwesend do nothing if sth else send email to user >_>
+    await browser.close();
     console.log(err);
+    return await err;
   }
 }
 

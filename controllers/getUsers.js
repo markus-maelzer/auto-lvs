@@ -15,11 +15,14 @@ const getUsersCallback = (callback) => {
 }
 
 
-const getUsersPromise = () => new Promise((resolve, reject) => {
-  fs.readFile(userDataPath, (err, data) => {
-    users = _.filter(JSON.parse(data), {'absent': false});
-    resolve(users);
+const getUsers = (arg) => {
+  const filter = arg || {'absent': false};
+  return new Promise((resolve, reject) => {
+    fs.readFile(userDataPath, (err, data) => {
+      users = _.filter(JSON.parse(data), filter);
+      resolve(users);
+    })
   })
-})
+}
 
-module.exports = getUsersPromise;
+module.exports = getUsers;

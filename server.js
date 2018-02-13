@@ -12,9 +12,9 @@ const publicPath = __dirname + '/public';
 const port = process.env.PORT || 3001;
 
 const lvs = require('./puppeteer/log-into-lvs');
-const getUsersPromise = require('./controllers/getUsers');
+const getUsers = require('./controllers/getUsers');
 
-getUsersPromise().then((res) => {
+getUsers().then((res) => {
   console.log(res);
 });
 
