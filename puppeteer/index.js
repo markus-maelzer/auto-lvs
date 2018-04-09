@@ -12,11 +12,11 @@ function loginUsers(args) {
   if(!this.users) {
     getUsers().then(res => {
       this.users = res;
-      console.log(this.users);
+      console.log('Users:', this.users);
       startLogin();
     });
   } else {
-    console.log(this.users);
+    console.log('Users:', this.users);
     startLogin();
   }
 
