@@ -28,10 +28,17 @@ function loginUsers(args) {
   function startLogin() {
     let {lvsUsername, lvsPassword} = this.users[i];
     logIntoLVS(lvsUsername, lvsPassword).then((res) => {
-      if(i <= this.users.length) {
-        iterator();
-      }
+      checkStatus();
+    }).catch(e => {
+      checkStatus()
+      console.log(e);
     })
+  }
+
+  function checkStatus() {
+    if(i <= this.users.length) {
+      iterator();
+    }
   }
 }
 
