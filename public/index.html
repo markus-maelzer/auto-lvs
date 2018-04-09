@@ -7,7 +7,19 @@
   <meta charset="utf-8">
 </head>
 <body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io('http://localhost:3001');
+</script>
 
 <h1>HI</h1>
+<button id="test">test</button>
+
+<script type="text/javascript">
+  const button = document.getElementById('test');
+  button.addEventListener('click', function () {
+    socket.emit('log-into-lvs', {all: true});
+  })
+</script>
 </body>
 </html>

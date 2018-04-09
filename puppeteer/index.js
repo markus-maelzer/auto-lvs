@@ -15,6 +15,9 @@ function loginUsers(args) {
       console.log(this.users);
       startLogin();
     });
+  } else {
+    console.log(this.users);
+    startLogin();
   }
 
   function iterator() {
@@ -25,10 +28,11 @@ function loginUsers(args) {
   function startLogin() {
     let {lvsUsername, lvsPassword} = this.users[i];
     logIntoLVS(lvsUsername, lvsPassword).then((res) => {
-      console.log(res);
       if(i <= this.users.length) {
         iterator();
       }
     })
   }
 }
+
+module.exports = loginUsers;

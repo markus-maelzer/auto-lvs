@@ -13,6 +13,7 @@ const port = process.env.PORT || 3001;
 
 const lvs = require('./puppeteer/log-into-lvs');
 const getUsers = require('./controllers/getUsers');
+const loginUsers = require('./puppeteer');
 
 getUsers().then((res) => {
   console.log(res);
@@ -26,6 +27,10 @@ io.on('connection', socket => {
   console.log(`User with id ${socket.id} connected`);
   socket.on('disconnect', reason => {
     console.log(`User with id ${socket.id} disconnected`);
+  })
+  socket.on('log-into-lvs', data => {
+    console.log('jo');
+    loginUsers();
   })
 })
 

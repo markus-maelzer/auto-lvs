@@ -1,0 +1,3 @@
+const loginUsers = require('./');
+
+loginUsers();
