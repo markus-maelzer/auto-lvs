@@ -5,26 +5,5 @@
     "lvsUsername": "markus.maelzer",
     "lvsPassword": "lvs",
     "absent": false
-  },
-  {
-    "username": "lukas.mussnig",
-    "password": "1234",
-    "lvsUsername": "lukas.mussnig",
-    "lvsPassword": "lvs",
-    "absent": true
-  },
-  {
-    "username": "nicolas.cetl",
-    "password": "1234",
-    "lvsUsername": "nicolas.cetl",
-    "lvsPassword": "lvs",
-    "absent": true
-  },
-  {
-    "username": "markus.maelzer",
-    "password": "1234",
-    "lvsUsername": "markus.maelzer",
-    "lvsPassword": "lvs",
-    "absent": false
   }
 ]
