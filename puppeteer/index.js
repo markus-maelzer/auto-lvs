@@ -26,6 +26,9 @@ function loginUsers(args) {
   }
 
   function startLogin() {
+    console.log('test1', this.users);
+    console.log('test2', this.users[i]);
+    console.log('test3', i);
     let {lvsUsername, lvsPassword} = this.users[i];
     logIntoLVS(lvsUsername, lvsPassword).then((res) => {
       checkStatus();
