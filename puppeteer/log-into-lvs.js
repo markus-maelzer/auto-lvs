@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
 async function logIntoLVS(user, pw) {
-  const browser = await puppeteer.launch({headless: false});
+  const browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
   const page = await browser.newPage();
   try {
   await page.goto('http://service.bfi-kaernten.at/lvs/');
