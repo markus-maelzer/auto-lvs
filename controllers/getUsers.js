@@ -15,12 +15,11 @@ const getUsersCallback = (callback) => {
 }
 
 
-const getUsers = (arg) => {
-  const filter = arg || {'absent': false};
+const getUsers = (args) => {
+  const filter = {absent: false, ...args};
   console.log(filter);
   return new Promise((resolve, reject) => {
     fs.readFile(userDataPath, (err, data) => {
-      console.log(data);
       users = _.filter(JSON.parse(data), filter);
       resolve(users);
     })

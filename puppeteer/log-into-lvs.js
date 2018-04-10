@@ -11,7 +11,7 @@ async function logIntoLVS(user, pw) {
   await page.keyboard.type(pw, {delay: 50});
   await page.waitFor(1000);
   await page.click('#Login1_Button1');
-  await page.waitFor(5000);
+  await page.waitFor(1000);
   await page.click('input[type="submit"]');
 
   await page.waitFor(2000);

@@ -16,7 +16,7 @@ const getUsers = require('./controllers/getUsers');
 const loginUsers = require('./puppeteer');
 
 getUsers().then((res) => {
-  // console.log(res);
+  console.log(res);
 });
 
 app.use(express.static(publicPath));

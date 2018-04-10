@@ -4,21 +4,17 @@ const getUsers = require('../controllers/getUsers');
 
 function loginUsers(args) {
   let i = 0;
-  let users;
   // args = Object.assign(args, {
   //   filter: { 'absent': false }
   // });
   // Object.assign(this, args);
-  if(!this.users) {
-    getUsers().then(res => {
-      this.users = res;
-      console.log('Users:', this.users);
-      startLogin();
-    });
-  } else {
-    console.log('Users:', this.users);
+
+  getUsers().then(res => {
+    this.users = res;
     startLogin();
-  }
+  }).catch((e) => {
+    return false;
+  });
 
   function iterator() {
     i++;
@@ -26,20 +22,16 @@ function loginUsers(args) {
   }
 
   function startLogin() {
-    console.log('test1', this.users);
-    console.log('test2', this.users[i]);
-    console.log('test3', i);
     let {lvsUsername, lvsPassword} = this.users[i];
     logIntoLVS(lvsUsername, lvsPassword).then((res) => {
       checkStatus();
     }).catch(e => {
       checkStatus()
-      console.log(e);
     })
   }
 
   function checkStatus() {
-    if(i <= this.users.length) {
+    if((i + 1) < this.users.length) {
       iterator();
     }
   }

@@ -5,5 +5,12 @@
     "lvsUsername": "markus.maelzer",
     "lvsPassword": "lvs",
     "absent": false
+  },
+  {
+    "username": "aleex",
+    "password": "1234",
+    "lvsUsername": "alexander.pettenhofer",
+    "lvsPassword": "boognish",
+    "absent": false
   }
 ]
