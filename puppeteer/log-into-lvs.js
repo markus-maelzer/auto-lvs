@@ -22,7 +22,7 @@ async function logIntoLVS(user, pw) {
     // check status: if anwesend do nothing if sth else send email to user >_>
     await browser.close();
     console.log(err);
-    return await err;
+    throw new Error(err);
   }
 }
 
